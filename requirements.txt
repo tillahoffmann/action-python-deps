@@ -44,7 +44,9 @@ decorator==5.1.1
 defusedxml==0.7.1
     # via nbconvert
 exceptiongroup==1.1.1
-    # via anyio
+    # via
+    #   anyio
+    #   pytest
 executing==1.2.0
     # via stack-data
 fastjsonschema==2.17.1
@@ -59,6 +61,8 @@ idna==3.4
     # via
     #   anyio
     #   jsonschema
+iniconfig==2.0.0
+    # via pytest
 ipykernel==6.23.3
     # via
     #   ipywidgets
@@ -194,6 +198,7 @@ packaging==23.1
     #   jupyter-server
     #   matplotlib
     #   nbconvert
+    #   pytest
     #   qtconsole
     #   qtpy
 pandocfilters==1.5.0
@@ -208,6 +213,8 @@ pillow==9.5.0
     # via matplotlib
 platformdirs==3.8.0
     # via jupyter-core
+pluggy==1.2.0
+    # via pytest
 prometheus-client==0.17.0
     # via
     #   jupyter-server
@@ -237,6 +244,8 @@ pyparsing==3.1.0
     # via matplotlib
 pyrsistent==0.19.3
     # via jsonschema
+pytest==7.4.0
+    # via -r requirements.in
 python-dateutil==2.8.2
     # via
     #   jupyter-client
@@ -299,6 +308,8 @@ threadpoolctl==3.1.0
     # via scikit-learn
 tinycss2==1.2.1
     # via nbconvert
+tomli==2.0.1
+    # via pytest
 torch==2.0.1
     # via -r requirements.in
 tornado==6.3.2

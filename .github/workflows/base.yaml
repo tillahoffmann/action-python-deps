@@ -1,0 +1,43 @@
+name: GitHub Action Python Dependencies
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  base:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository.
+        uses: actions/checkout@v3
+      - name: Setup python.
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+      - name: Install Python dependencies.
+        run: pip install -r requirements.txt
+  cached:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository.
+        uses: actions/checkout@v3
+      - name: Setup python.
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+          cache: pip
+      - name: Install Python dependencies.
+        run: pip install -r requirements.txt
+  no-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository.
+        uses: actions/checkout@v3
+      - name: Setup python.
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+          cache: pip
+      - name: Install Python dependencies.
+        run: pip install -r requirements.txt --no-dependices --extra-index-url https://download.pytorch.org/whl/cpu
